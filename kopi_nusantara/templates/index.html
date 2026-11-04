@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UMKM Kopi Nusantara</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f8f5ef;
+    color: #35251c;
+}
+
+header {
+    background: #38251b;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+.hero {
+    min-height: 450px;
+    background: linear-gradient(
+        rgba(30,20,15,.65),
+        rgba(30,20,15,.65)
+    ), url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1600')
+    center/cover;
+    display: flex;
+    align-items: center;
+    padding: 8%;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    background: #b77945;
+    color: white;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+section {
+    padding: 65px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.about {
+    text-align: center;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: auto;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px #00000015;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 0 10px;
+}
+
+.card p {
+    margin-bottom: 12px;
+    color: #805b40;
+}
+
+.card button {
+    margin-top: 8px;
+}
+
+.cart {
+    background: #eee4d8;
+    text-align: center;
+}
+
+#cart-list {
+    margin: 20px 0;
+    line-height: 2;
+}
+
+.contact {
+    text-align: center;
+    line-height: 2;
+}
+
+footer {
+    background: #38251b;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+@media(max-width:600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 8px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">☕ Kopi Nusantara</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">Tentang</a>
+        <a href="#produk">Produk</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <h1>UMKM Kopi Nusantara</h1>
+        <p>Nikmati cita rasa kopi asli Indonesia dalam setiap seduhan.</p>
+        <a href="#produk" class="btn">Lihat Produk</a>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">Tentang Kami</h2>
+    <div class="about">
+        <p>
+        Kopi Nusantara merupakan UMKM yang bergerak di bidang
+        penjualan kopi lokal Indonesia. Kami menghadirkan kopi
+        berkualitas dari berbagai daerah di Indonesia dengan
+        cita rasa khas dan aroma yang istimewa.
+        </p>
+        <p>
+        Kami berkomitmen mendukung petani kopi lokal dan
+        memperkenalkan kekayaan kopi Indonesia kepada masyarakat.
+        </p>
+    </div>
+</section>
+
+<section id="produk">
+    <h2 class="section-title">Produk Kami</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?w=600">
+            <h3>Kopi Gayo</h3>
+            <p>Rp65.000 / 250 gram</p>
+            <button class="btn" onclick="addCart('Kopi Gayo',65000)">
+                Tambah Keranjang
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?w=600">
+            <h3>Kopi Toraja</h3>
+            <p>Rp70.000 / 250 gram</p>
+            <button class="btn" onclick="addCart('Kopi Toraja',70000)">
+                Tambah Keranjang
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600">
+            <h3>Kopi Lampung</h3>
+            <p>Rp55.000 / 250 gram</p>
+            <button class="btn" onclick="addCart('Kopi Lampung',55000)">
+                Tambah Keranjang
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600">
+            <h3>Kopi Bali Kintamani</h3>
+            <p>Rp75.000 / 250 gram</p>
+            <button class="btn" onclick="addCart('Kopi Bali Kintamani',75000)">
+                Tambah Keranjang
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section class="cart">
+    <h2 class="section-title">Keranjang Belanja 🛒</h2>
+    <div id="cart-list">Keranjang masih kosong.</div>
+    <h3 id="total">Total: Rp0</h3>
+    <br>
+    <button class="btn" onclick="checkout()">Pesan Sekarang</button>
+</section>
+
+<section class="contact" id="kontak">
+    <h2 class="section-title">Hubungi Kami</h2>
+    <p>📍 Indonesia</p>
+    <p>📱 WhatsApp: 0895411195846</p>
+    <p>📧 Email: kopinusantara@gmail.com</p>
+    <br>
+    <a class="btn" href="https://wa.me/62895411195846">
+        Hubungi WhatsApp
+    </a>
+</section>
+
+<footer>
+    <p>© 2026 UMKM Kopi Nusantara.</p>
+    <p>Bangga dengan Kopi Lokal Indonesia ☕</p>
+</footer>
+
+<script>
+let cart = [];
+
+function addCart(name, price) {
+    cart.push({name, price});
+    updateCart();
+}
+
+function updateCart() {
+    let list = document.getElementById("cart-list");
+    let total = 0;
+
+    if (cart.length === 0) {
+        list.innerHTML = "Keranjang masih kosong.";
+    } else {
+        list.innerHTML = cart.map((item, index) => {
+            total += item.price;
+            return `
+                <p>${item.name} - Rp${item.price.toLocaleString("id-ID")}
+                <button onclick="removeCart(${index})">Hapus</button></p>
+            `;
+        }).join("");
+    }
+
+    document.getElementById("total").innerText =
+        "Total: Rp" + total.toLocaleString("id-ID");
+}
+
+function removeCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert("Keranjang masih kosong!");
+        return;
+    }
+
+    let pesan = "Halo Kopi Nusantara, saya ingin memesan:\n";
+    let total = 0;
+
+    cart.forEach(item => {
+        pesan += "- " + item.name + " : Rp" +
+        item.price.toLocaleString("id-ID") + "\n";
+        total += item.price;
+    });
+
+    pesan += "\nTotal: Rp" + total.toLocaleString("id-ID");
+
+    window.open(
+        "https://wa.me/62895411195846?text=" +
+        encodeURIComponent(pesan),
+        "_blank"
+    );
+}
+</script>
+
+</body>
+</html>
